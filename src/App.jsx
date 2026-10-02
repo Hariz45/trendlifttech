@@ -2261,22 +2261,25 @@ background: linear-gradient(
 
   .tlt-leaders-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr; /* Mobile-ல் default-ஆக Single Column */
       gap: 1.5rem;
   }
+
   @media (min-width: 640px) {
       .tlt-leaders-grid {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr); /* Small Tablets & Big Phones-க்கு 2 Columns */
       }
   }
-      @media (min-width: 400px) {
+
+  @media (min-width: 768px) {
       .tlt-leaders-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(3, 1fr); /* Tablets-க்கு 3 Columns */
       }
   }
+
   @media (min-width: 1024px) {
       .tlt-leaders-grid {
-          grid-template-columns: repeat(5, 1fr);
+          grid-template-columns: repeat(5, 1fr); /* Laptop/Desktop-க்கு 5 Columns */
       }
   }
   .tlt-leader-card {
